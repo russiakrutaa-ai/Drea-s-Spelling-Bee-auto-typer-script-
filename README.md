@@ -1,2 +1,5 @@
 # Drea-s-Spelling-Bee-auto-typer-script-
-yes
+
+Pay attention here! You may get PERMENATLY banned for using this.
+
+Thank you!
