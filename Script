@@ -1,0 +1,20 @@
+-- paste it in the exploiter
+
+local currentTyper = game.ReplicatedStorage.CurrentTyper
+local Player = game.Players.LocalPlayer
+local currentWord = game.ReplicatedStorage.CurrentWord
+
+local WPM = 300 -- change this to what you want
+
+currentTyper:GetPropertyChangedSignal('Value'):Connect(function()
+	if currentTyper.Value == Player then
+		local word = currentWord.Value
+		for i = 1, #word do
+			task.wait(60 / WPM)
+			game.ReplicatedStorage.Type:FireServer(string.upper(word:sub(1, i)))
+			print(string.upper(word:sub(1, i)))
+		end
+		game.ReplicatedStorage.EnterPressed:FireServer()
+	end
+end)
+print('me loading.')
